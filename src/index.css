@@ -1,13 +1,392 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: 'Lato', Helvetica, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.home-page {
+	display:flex;
+}
+
+.profile {
+	/*flex:8;*/
+	background-color: #f1f1f1;
+	display: flex;
+	flex-direction: column;
+	/*padding: 10px;*/
+	width: 250px;
+	height: 100%;
+	position: fixed;
+	overflow: scroll;
+}
+
+.about-cat {
+	flex:9;
+	background-color: #f1f1f1;
+	/*display: flex;
+	flex-direction: column;*/
+}
+
+.view-cats {
+	margin-left: 250px;
+	flex:16;
+	background-color:#fff;
+	min-height: 400px;
+}
+
+.avatar{text-align: center;}
+
+.avatar img {
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+	border: 3px solid #c800aa;
+	/*box-shadow: 0 2px 1px rgba(0, 0, 0, 0.4);*/
+}
+
+.avatar p {
+	font-weight: 700;
+	font-weight: 1.2em;
+	color: #FB4FAF;
+}
+
+.bio-text{
+	font-weight: 300;
+	font-weight: 1.1em;
+	text-align: center;
+}
+
+.menu { 
+	margin-top: 20px;
+}
+
+.menu ul{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+.menu ul li{	
+	padding: 8px 5px;
+	display: flex;
+	align-items: center;
+}
+
+.menu ul a{
+	color: #222222;
+	text-decoration: none;
+}
+
+.menu ul a:hover li{
+	background-color: #fff;
+}
+
+.menu ion-icon {
+	font-size: 1.45em ;
+	color: #c800aa;
+	margin: 0 10px;
+}
+
+.menu ul li p {
+	margin: 0px;
+	padding: 0px;
+}
+
+.formulario p {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 20px;
+	margin-left: 5px; }
+	
+.formulario > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc; }
+.formulario .radio label {
+    display: inline-block;
+    cursor: pointer;
+    color: #c800aa;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+.formulario .radio label:hover {
+    background: rgba(255, 65, 54, 0.1); }
+.formulario .radio label:before {
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    left: 15px;
+    border-radius: 50%;
+    background: none;
+    border: 3px solid #c800aa; }
+.formulario input[type="radio"] {
+    display: none; }
+.formulario input[type="radio"]:checked + label:before {
+    display: none; }
+.formulario input[type="radio"]:checked + label {
+    padding: 5px 15px;
+    background: #c800aa;
+    border-radius: 2px;
+	color: #fff; }
+
+.contenedor p{
+	font-size: 16px;
+	color: #000000;
+	margin-top: 10px;
+	margin-bottom: 15px;
+    margin-left: 5px;
+	margin-top: 30px;
+}
+.contenedor div {
+	display: inline-block;
+	background-color: #c800aa;
+	border-radius: 5px;
+	border: 5px solid #c800aa;
+	color: #fff;
+	text-align: center;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.match{
+	margin-top: 30px;
+}
+.match img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 3px solid #c800aa;
+}
+.match p {
+	font-size: 16px;
+	color: #000000;
+	margin-top: 10px;
+	margin-bottom: 15px;
+    margin-left: 5px;
+}
+
+.match div {
+	display: inline-block;
+	margin-right: 7px;
+	margin-left: 7px;
+}
+
+
+.topbar{
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.topbar-icon ion-icon{
+	font-size:1.8em;
+	color: #888888;
+}
+
+.topbar-icon span{
+	background-color: red;
+	color: #fff;
+	padding: 2px 4px;
+	font-weight: 800;
+	font-size: 0.8em;
+	border-radius: 2px;
+	position: absolute;
+	margin-top: 17px;
+	margin-left: -10px;
+}
+
+.navigation{
+	display: flex;
+	align-items: center;
+	padding: 10px 8px;
+}
+
+.navigation-icon{
+	background: #9027E2;
+	padding: 8px;
+	border-radius: 50%;
+	margin: 0 10px;
+	width: 30px;
+	height: 30;
+	text-align: center;
+}
+
+.navigation-icon:hover{
+	background-color: #9e3bec;
+	cursor: pointer;
+}
+
+.navigation-icon ion-icon{
+	color: #fff;
+	font-size: 27px;
+}
+
+.image-couple{
+	border: 1px solid #ccc;
+	flex: 1;
+	box-shadow:2px 2px 2px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background: #f1f1f1;
+}
+
+.image-couple img{
+	width: 100%;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.image-couple h3{
+	font-weight: 800;
+	color: #FB4FAF;
+}
+
+.image-couple p{
+	font-weight: 300;
+}
+
+.reactions{
+	display: flex;
+	justify-content: center;
+}
+
+.reaction-icon{
+	padding: 20px;
+	border-radius: 50%;
+	margin: 15px 15px;
+	opacity: 0.8;
+}
+
+.reaction-icon ion-icon{
+	font-size: 28px;
+	color: #fff;
+}
+
+.reaction-icon ion-icon:hover{
+	color: #9e3bec;
+	cursor: pointer;
+}
+
+.login{
+	width: 300px;
+	border: 1px solid #f2f2f2;
+	border-radius: 5px;
+	margin: 0 auto;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.login form{
+	margin: 30px 20px;
+	padding: 0px;
+}
+
+.input-custom{
+	margin: 15px 0;
+}
+
+.input-custom label{
+	width: 100%;
+	text-align: left !important;
+	float: left;
+	margin-bottom: 4px;
+	font-family: 'Lato';
+	color: #333;
+}
+
+.input-custom input{
+	width: 100%;
+	background: #f2f2f2;
+	padding: 6px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 1.1em;
+	font-family: 'Lato';
+	color: #444444;
+}
+
+.button-primary input{
+	cursor: pointer;
+	font-size: 1.15em;
+	background-color: #07ABA0;
+	color: #fff;
+	padding: 6px 85px;
+	font-family: 'Lato';
+	border-radius: 6px;
+	opacity: 0.8;
+}
+
+.button-primary input:hover{
+	opacity: 1;
+}
+
+.signup-link{
+	color: #666;
+	font-family: 'Lato';
+}
+
+.signup-link a{
+	margin-left: 15px;
+	font-weight: bold;
+	color: #9e3bec;
+}
+
+.signup{
+	width: 400px;
+	border: 1px solid #f2f2f2;
+	border-radius: 5px;
+	margin: 0 auto;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.signup form{
+	margin: 30px 20px;
+	padding: 0px;
+}
+
+.input-register{
+	margin: 15px 0;
+}
+
+.input-register label{
+	width: 100%;
+	text-align: left !important;
+	float: left;
+	margin-bottom: 4px;
+	margin-left: 4px;
+	font-family: 'Lato';
+	color: #333;
+}
+
+.input-register input{
+	width: 100%;
+	background: #f2f2f2;
+	padding: 6px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 1.1em;
+	font-family: 'Lato';
+	color: #444444;
+}
+
+/*ipad size */
+
+@media (max-width: 768px){
+	.profile{
+		display: none;
+	}
+	.about-cat{
+		display: none;
+	}
+	.view-cats{
+		margin-left: 0px;
+	}
 }
