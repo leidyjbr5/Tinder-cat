@@ -31,7 +31,7 @@ export const CAT_LIST =[
 
 ]
 
-export const INTEREST = [
+export const INTERESTS = [
     {
         name: 'Cazar',
         status: true

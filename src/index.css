@@ -134,24 +134,28 @@ body {
     background: #c800aa;
     border-radius: 2px;
 	color: #fff; }
-
-.contenedor p{
-	font-size: 16px;
-	color: #000000;
-	margin-top: 10px;
-	margin-bottom: 15px;
-    margin-left: 5px;
-	margin-top: 30px;
+.interest-container{
+	margin: 30px 10px;
+ }
+.interest-container h3{
+	font-weight: 300;
+	margin: 8px 0px;
 }
-.contenedor div {
-	display: inline-block;
-	background-color: #c800aa;
+.interest-container hr{
+	border-color: #fff;
+}
+.interest-container .interest-one{
+	border: 1px solid #c800aa;
 	border-radius: 5px;
-	border: 5px solid #c800aa;
-	color: #fff;
-	text-align: center;
-	margin-right: 5px;
-	margin-left: 5px;
+	padding: 6px 10px;
+	font-family: 'Lato';
+	font-weight: 500;
+	margin: 5px;
+}
+	  
+.interest-container .interest-box{
+	display: flex;
+	flex-wrap: wrap;
 }
 .match{
 	margin-top: 30px;
