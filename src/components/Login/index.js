@@ -1,34 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '../../static/logo-login.png'
-import { Link } from 'react-router-dom'
+import {
+    Link
+} from 'react-router-dom'
 
-export const Login = () => (
-    <div className="login">
-        <form>
+export const Login = () => {
+
+    const [ email, setEmail ] = useState('')
+    const [ password, setPassword ] = useState('')
+
+    const loginHandler = () => {
+        console.log('email', email)
+        console.log('password', password)
+    }
+
+    return (
+        <div className="login">
+            <form>
                 <img src={Logo} />
-
                 <div className="input-custom">
                     <label>Email address</label>
-                    <input type="email"  />
+                    <input value={ email } onChange={ (e) => setEmail(e.target.value) } type="email" />
                 </div>
-
                 <div className="input-custom">
                     <label>Password</label>
-                    <input type="password" />
+                    <input value={ password } onChange={ (e) => setPassword(e.target.value) } type="password" />
                 </div>
                 <br />
-                <Link to='/'>
-                    <div className='button-primary'>
-                        <input type='button' value='Login' />
-                    </div>
-                </Link>
+                <div className="button-primary">
+                    <input onClick={ loginHandler } type="button" value="Login" />
+                </div>
                 <br />
-                <p className='signup-link'>
+                <p className="signup-link">
                     ¿Not member yet?
-                        <Link to='/signup'>
-                            signup
-                        </Link>
-                </p>       
-        </form>
-    </div>
-)
+                    <Link to="/signup">
+                        Signup
+                    </Link>
+                </p>
+            </form>
+        </div>
+    )
+}
