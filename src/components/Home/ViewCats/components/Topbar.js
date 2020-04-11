@@ -27,7 +27,7 @@ export const Topbar = () => {
     };
 
     return (
-        <div ClassName="topbar">
+        <div className="topbar">
             <div className="show-mobile">
                 <TopbarIcon onPress={ profilePanelHandler } name="menu-sharp" />
             </div>

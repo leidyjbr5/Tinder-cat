@@ -195,6 +195,7 @@ body {
 .topbar-icon ion-icon{
 	font-size:1.8em;
 	color: #888888;
+	padding: 0 10px;
 }
 
 .topbar-icon span{
@@ -393,7 +394,13 @@ body {
 		margin-top: 58px;
 	}
 	.about-cat{
-		display: none;
+		/*display: none;*/
+		display: block; /* Esta se quita en la implementación final*/
+		position: fixed;
+		width: 300px;
+		margin-top: 58px;
+		right: 0;
+		height: 100%;
 	}
 	.view-cats{
 		margin-left: 0px;
