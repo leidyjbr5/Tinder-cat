@@ -21,6 +21,11 @@ export const Signup = () => (
                     <label>Gender</label>
                     <input type="gender"  />
                 </div>
+
+                <div className="input-register">
+                    <label>Bio</label>
+                    <input type="texto"  />
+                </div>
                 
                 <div className="input-register">
                     <label>Email address</label>
@@ -30,6 +35,11 @@ export const Signup = () => (
                 <div className="input-register">
                     <label>Password</label>
                     <input type="password" />
+                </div>
+
+                <div className="input-register">
+                    <label>Birthday</label>
+                    <input type="date"  />
                 </div>
 
                 <br />

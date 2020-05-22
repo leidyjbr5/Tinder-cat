@@ -328,7 +328,7 @@ body {
 	color: #fff;
 	padding: 6px 85px;
 	font-family: 'Lato';
-	border-radius: 6px;
+	border-radius: 6px solid #07ABA0;
 	opacity: 0.8;
 }
 
