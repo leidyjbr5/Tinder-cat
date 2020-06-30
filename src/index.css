@@ -375,7 +375,7 @@ body {
 	color: #333;
 }
 
-.input-register input{
+.input-register input, .input-register textarea {
 	width: 100%;
 	background: #f2f2f2;
 	padding: 6px;
@@ -383,8 +383,23 @@ body {
 	border-radius: 4px;
 	font-size: 1.1em;
 	font-family: 'Lato';
-	color: #444444;
+	color: #444;
 }
+
+.divider {
+	width: 5px;
+	height: 5px;
+	border: 1px solid #ccc;
+	margin: 0 15px;
+}
+
+.preferences-ages-container {
+	margin: 15px 30px;
+  }
+  
+  .rc-slider-track {
+	background: #c800aa !important;
+  }
 
 /*ipad size */
 

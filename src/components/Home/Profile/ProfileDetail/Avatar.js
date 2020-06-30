@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Avatar = () => (
+export const Avatar = ({ image, nick }) => (
     <div className='avatar'>
-        <img src="https://www.fundacion-affinity.org/sites/default/files/el-gato-necesita-tener-acceso-al-exterior.jpg"/>
-        <p>@Paul</p>
+        <img src={ image } />
+        <p>{ nick }</p>
     </div>
 )

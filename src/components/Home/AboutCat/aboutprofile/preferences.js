@@ -1,20 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
-export const Preferences = () => (
-    <div class="wrap">
-        <form action="" class="formulario">
-            <div class="radio">
-                <p>Qué estas buscando?</p>
- 
-                <input type="radio" name="sexo" id="gatos"/>
-                <label for="gatos">Gatos</label>
+export const Preferences = ({ gender, onChange } ) => {
 
-                <input type="radio" name="sexo" id="gatas"/>
-                <label for="gatas">Gatas</label>
-        
-                <input type="radio" name="sexo" id="otros"/>
-                <label for="otros">Otros</label>
-            </div>
-        </form>
-    </div>
-)
+    const [genderSelected, setGenderSelected] = useState(gender)
+
+    useEffect(() => {
+        onChange(genderSelected)
+    }, [genderSelected])
+
+    return (
+        <div class="wrap">
+            <form action="" class="formulario">
+                <div class="radio">
+                    <p>Qué estas buscando?</p>
+                    <hr />
+
+                    <input cheked={genderSelected =='F'} onChange={ e => setGenderSelected(e.target.value) } type="radio" name="sexo" id="gatos" value="M"/>
+                    <label for="gatos">Gatos</label>
+
+                    <input cheke d={genderSelected =='M'} onChange={ e => setGenderSelected(e.target.value) } type="radio" name="sexo" id="gatas" value="F"/>
+                    <label for="gatas">Gatas</label>
+
+                </div>
+            </form>
+        </div>
+    )
+}
