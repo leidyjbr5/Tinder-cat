@@ -14,8 +14,8 @@ export const Interest = ({ interestCat = [] }) => {
         try {
             const endpoint = HTTP_CONSTANTS.interests
             const response = await requestHttp('get', endpoint)
-            const { interests } = response
-            setInterestList(interests)
+            const { interest } = response
+            setInterestList(interest)
         }catch (err){
             console.error(err)
         }

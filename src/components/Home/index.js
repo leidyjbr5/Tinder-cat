@@ -17,8 +17,9 @@ export const Home = () => {
             const endpoint = HTTP_CONSTANTS.autologin
             const response = await requestHttp('post', endpoint)
             const { status, cat } = response
+
             if (response.status === 1){
-                setCat()
+                setCat(cat)
             }else{
                 unauthorized()
             }
@@ -28,13 +29,12 @@ export const Home = () => {
     }
 
     const unauthorized = () => {
-        sessionStorage.removeItem('_TOKE_')
+        sessionStorage.removeItem('_TOKEN_')
         window.location.href = '/login'
     }
 
     useEffect(() => {
         autologin()
-
         return () => {}
     }, [])
 
