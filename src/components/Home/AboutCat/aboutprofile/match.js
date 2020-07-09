@@ -16,7 +16,7 @@ export const Match = () => (
         <p>@Nieve</p>
 	</div>
 	<div><img src="https://cumbrepuebloscop20.org/wp-content/uploads/2018/09/Gato-Azul-Ruso-2.jpg" alt=""/>
-        <p>@Pancha</p>
+        <p>@Pancho</p>
 	</div>
 </div>
 

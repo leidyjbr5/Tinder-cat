@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Couple } from './Couple'
 import { NavigationIcon } from './Navigation-icon'
 import { HTTP_CONSTANTS } from '../../../../config/http-constants'
 import { requestHttp } from '../../../../config/http-server'
+import { CatContext } from '../../../context/CatContext'
 //import { CAT_LIST } from '../../../../data/db'
 
 export const Navigation = () => {
@@ -11,6 +12,7 @@ export const Navigation = () => {
     const[cat, setCat] = useState({})
     const [ indexCat, setIndexCat ] = useState(-1)
     const [ loading, setLoading ] = useState(true)
+    const {catInteraction, setCatInteraction,reloadCats,setReloadCats} = useContext(CatContext)
 
     const getCatList = async () => {
         try {
@@ -24,6 +26,15 @@ export const Navigation = () => {
           console.log(err)
         }
       }
+
+      useEffect (() => {
+
+        if(reloadCats){
+          getCatList()
+        }
+        setReloadCats(false)
+        return () => {}
+      }, [reloadCats])
 
     const goBack = () => {
         console.log('go back...')
@@ -39,11 +50,17 @@ export const Navigation = () => {
         //setCat(CAT_LIST[indexCat])
     }
 
-    useEffect ( () => {
-        if (catList.length > 0) {
-            setCat(catList[indexCat])
-            setLoading(false)
-    }
+    useEffect(() => {
+      getCatList()
+      return () => {}
+    }, [])
+  
+    useEffect( () => {
+      if (catList.length > 0) {
+        setCat(catList[indexCat])
+        setCatInteraction(catList[indexCat]._id)
+        setLoading(false)
+      }
 
     return () => {
     } //Saneamiento
@@ -54,8 +71,8 @@ export const Navigation = () => {
             <NavigationIcon onPress={ goBack } name="arrow-undo" />
             <Couple
                 image={ cat.image }
-                username={ cat.username }
-                description={ cat.description }
+                nick={ cat.nick }
+                bio={ cat.bio }
             />
             <NavigationIcon onPress={ goNext } name="arrow-redo" />
         </div>
