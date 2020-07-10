@@ -30,10 +30,17 @@ export const Navigation = () => {
       useEffect (() => {
 
         if(reloadCats){
-          getCatList()
+          setReloadCats(false);
+          const newCatList = catList.filter((_, key) => key != indexCat)
+          setCatList([...newCatList])
+          if (newCatList.length > 0) {
+            goNext()
+          } else {
+            setLoading(true)
+          }
         }
-        setReloadCats(false)
         return () => {}
+
       }, [reloadCats])
 
     const goBack = () => {
@@ -56,7 +63,7 @@ export const Navigation = () => {
     }, [])
   
     useEffect( () => {
-      if (catList.length > 0) {
+      if (catList && catList.length > 0) {
         setCat(catList[indexCat])
         setCatInteraction(catList[indexCat]._id)
         setLoading(false)

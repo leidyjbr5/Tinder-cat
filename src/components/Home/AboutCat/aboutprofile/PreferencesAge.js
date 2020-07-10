@@ -15,7 +15,7 @@ export const PreferencesAge = ( { ageMin = 3, ageMax = 10, notifyChange }) => {
  
     return( 
     <div className= "preferences-ages-container">
-        <p> Chosse Age Range </p>
+        <p> Choose Age Range </p>
         <Range railStyle={{ backgroundColor: '#c800aa' }}
         onChange = { onChangeHandler }min={1} max={20} 
         defaultValue={[ageMin, ageMax]} tipFormatter={value => `${value}`} />

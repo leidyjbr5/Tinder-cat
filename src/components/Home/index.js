@@ -47,7 +47,7 @@ export const Home = () => {
                     ? <Fragment>
                         <Profile bio={cat.bio} nick={cat.nick} image={cat.image} />
                         <ViewCats />
-                        <AboutCat interest={ cat.interest } preferences={cat.preferences}/>
+                        <AboutCat interest={ cat.interests } preferences={cat.preferences}/>
                     </Fragment>
                     : <p>Loading app...</p>
             }
